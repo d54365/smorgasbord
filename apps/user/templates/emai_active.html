@@ -1,0 +1,841 @@
+<div id="qm_con_body">
+    <div id="mailContentContainer" class="qmbox qm_con_body_content qqmail_webmail_only" style="opacity: 1;">
+        <style>
+            .qmbox html {
+                font-size: 16px;
+            }
+
+            .qmbox .frame {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            .qmbox .content_1280 {
+                max-width: 1280px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            .qmbox .content_1600 {
+                max-width: 1600px;
+                margin: 0 auto;
+            }
+
+            .qmbox .text_center {
+                text-align: center;
+            }
+
+            .qmbox .text_right {
+                text-align: right;
+            }
+
+            .qmbox .text_c0 {
+                color: #000;
+            }
+
+            .qmbox .text_c2 {
+                color: #222;
+            }
+
+            .qmbox .text_c3 {
+                color: #333;
+            }
+
+            .qmbox .text_c5 {
+                color: #555;
+            }
+
+            .qmbox .text_c7 {
+                color: #777;
+            }
+
+            .qmbox .text_c9 {
+                color: #999;
+            }
+
+            .qmbox .text_ca {
+                color: #aaa;
+            }
+
+            .qmbox .text_cc {
+                color: #ccc;
+            }
+
+            .qmbox .text_cd {
+                color: #ddd;
+            }
+
+            .qmbox .text_ce {
+                color: #eee;
+            }
+
+            .qmbox .text_cf {
+                color: #f2f2f2;
+            }
+
+            .qmbox .text_042 {
+                color: #063894;
+            }
+
+            .qmbox .text_green {
+                color: #009237;
+            }
+
+            .qmbox .text07rem {
+                font-size: 0.7rem;
+            }
+
+            .qmbox .text08rem {
+                font-size: 0.8rem;
+            }
+
+            .qmbox .text09rem {
+                font-size: 0.9rem;
+            }
+
+            .qmbox .text1rem {
+                font-size: 1rem;
+            }
+
+            .qmbox .text11rem {
+                font-size: 1.1rem;
+            }
+
+            .qmbox .text12rem {
+                font-size: 1.2rem;
+            }
+
+            .qmbox .text13rem {
+                font-size: 1.3rem;
+            }
+
+            .qmbox .text14rem {
+                font-size: 1.4rem;
+            }
+
+            .qmbox .text15rem {
+                font-size: 1.5rem;
+            }
+
+            .qmbox .text16rem {
+                font-size: 1.6rem;
+            }
+
+            .qmbox .text17rem {
+                font-size: 1.7rem;
+            }
+
+            .qmbox .text19rem {
+                font-size: 1.9rem;
+            }
+
+            .qmbox .text2rem {
+                font-size: 2rem;
+            }
+
+            .qmbox .text25rem {
+                font-size: 2.5rem;
+            }
+
+            .qmbox .text3rem {
+                font-size: 3rem;
+            }
+
+            .qmbox .text35rem {
+                font-size: 3.5rem;
+            }
+
+            .qmbox .text4rem {
+                font-size: 4rem;
+            }
+
+            .qmbox .weight500 {
+                font-weight: 500;
+            }
+
+            .qmbox .weight600 {
+                font-weight: 600;
+            }
+
+            .qmbox .weight700 {
+                font-weight: 700;
+            }
+
+            .qmbox .weight800 {
+                font-weight: 800;
+            }
+
+            .qmbox .text_vertical {
+                writing-mode: vertical-rl;
+                margin: 0 auto;
+            }
+
+            .qmbox .text_focus {
+                font-size: 6rem;
+                margin: 8vh auto;
+                font-weight: 800;
+                word-spacing: 3rem;
+                letter-spacing: 3rem;
+            }
+
+            .qmbox .max_content {
+                min-width: max-content;
+            }
+
+            .qmbox red {
+                color: red;
+            }
+
+            .qmbox .red {
+                color: red;
+            }
+
+            .qmbox orange {
+                color: orange;
+            }
+
+            .qmbox .orange {
+                color: orange;
+            }
+
+            .qmbox yellow {
+                color: yellow;
+            }
+
+            .qmbox .yellow {
+                color: yellow;
+            }
+
+            .qmbox green {
+                color: green;
+            }
+
+            .qmbox .green {
+                color: green;
+            }
+
+            .qmbox .blue {
+                color: #409eff;
+            }
+
+            .qmbox .gary {
+                color: #999;
+            }
+
+            .qmbox b {
+                font-weight: 600;
+            }
+
+            .qmbox .all_around_border {
+                border: 1px solid;
+            }
+
+            .qmbox .right_border {
+                border-right: 1px solid;
+            }
+
+            .qmbox .left_border {
+                border-left: 1px solid;
+            }
+
+            .qmbox .top_border {
+                border-top: 1px solid;
+            }
+
+            .qmbox .bottom_border {
+                border-bottom: 1px solid;
+            }
+
+            .qmbox .light_border {
+                border-color: #ccc;
+            }
+
+            .qmbox .light_green_border {
+                border-color: #00923720;
+            }
+
+            .qmbox .dark_border {
+                border-color: #333;
+            }
+
+            .qmbox .border2px {
+                border-width: 2px;
+            }
+
+            .qmbox .radius {
+                border-radius: 10px;
+            }
+
+            .qmbox .dark_shadow {
+                box-shadow: 0 0 0 1px rgb(53 72 91 / 10%), 0 2px 2px rgb(0 0 0 / 3%), 0 4px 4px rgb(0 0 0 / 4%), 0 10px 8px rgb(0 0 0 / 5%), 0 15px 15px rgb(0 0 0 / 6%), 0 30px 30px rgb(0 0 0 / 7%), 0 70px 65px rgb(0 0 0 / 9%);
+            }
+
+            .qmbox .light_shadow {
+                box-shadow: 0 0 0 1px rgb(53 72 91 / 10%), 0 2px 2px rgb(0 0 0 / 3%), 0 4px 4px rgb(0 0 0 / 4%);
+            }
+
+            .qmbox .task_box {
+                padding: 0 10px;
+                box-shadow: 0px 2px 4px 2px rgb(0 0 0 / 4%);
+                margin-top: 1rem;
+            }
+
+            /* float */
+            .qmbox .float_right {
+                float: right;
+            }
+
+            .qmbox .float_left {
+                float: left;
+            }
+
+            .qmbox .page_80 {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .qmbox .tb_margin_2 {
+                margin-top: 2vh;
+                margin-bottom: 2vh;
+            }
+
+            .qmbox .lr_margin_2 {
+                margin-left: 2vw;
+                margin-right: 2vw;
+            }
+
+            .qmbox .lr_margin_1 {
+                margin-left: 1vw;
+                margin-right: 1vw;
+            }
+
+            .qmbox .l_margin_2 {
+                margin-left: 2vw;
+            }
+
+            .qmbox .r_margin_2 {
+                margin-right: 2vw;
+            }
+
+            .qmbox .l_margin_1 {
+                margin-left: 1vw;
+            }
+
+            .qmbox .r_margin_1 {
+                margin-right: 1vw;
+            }
+
+            .qmbox .margin_0 {
+                margin: 0;
+            }
+
+            .qmbox .no_pad {
+                padding: 0;
+            }
+
+            .qmbox .padding_600 {
+                padding: 0 2vw;
+            }
+
+            .qmbox .padding_2rem {
+                padding: 0 2rem;
+            }
+
+            .qmbox .margin_600 {
+                margin-left: 2vw;
+                margin-right: 2vw;
+            }
+
+            .qmbox .lr_padding_2 {
+                padding-left: 2vw;
+                padding-right: 2vw;
+            }
+
+            .qmbox .lr_padding_1 {
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+
+            .qmbox .tb_padding_1 {
+                padding-top: 1vw;
+                padding-bottom: 1vw;
+            }
+
+            .qmbox .l_padding_2 {
+                padding-left: 2vw;
+            }
+
+            .qmbox .r_padding_2 {
+                padding-right: 2vw;
+            }
+
+            .qmbox .l_padding_1 {
+                padding-left: 1vw;
+            }
+
+            .qmbox .l_padding_05 {
+                padding-left: 0.5vw;
+            }
+
+            .qmbox .l_padding_05 {
+                padding-right: 0.5vw;
+            }
+
+            .qmbox .r_padding_1 {
+                padding-right: 1vw;
+            }
+
+            .qmbox .padding_4 {
+                padding: 4vh 4vw;
+            }
+
+            .qmbox .padding_2 {
+                padding: 2vh 2vw;
+            }
+
+            .qmbox .padding_1 {
+                padding: 1vh 1vw;
+            }
+
+            .qmbox .padding_05 {
+                padding: 0.5vh 0.5vw;
+            }
+
+            .qmbox .padding_5p {
+                padding: 5%;
+            }
+
+            .qmbox .padding_4p {
+                padding: 4%;
+            }
+
+            .qmbox .padding_tb_0 {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .qmbox .displayhide {
+                display: none;
+            }
+
+            .qmbox .widthhide {
+                width: 0;
+                overflow: hidden;
+                transition: width 0.3s;
+            }
+
+            .qmbox .heighthide {
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s;
+            }
+
+            .qmbox .opacityhide {
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .qmbox .opacityshow {
+                opacity: 1;
+                transition: opacity 0.3s;
+            }
+
+            .qmbox flexdiv {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .qmbox .flex_def {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .qmbox .flex_wrap {
+                flex-wrap: wrap;
+            }
+
+            .qmbox .flex_column {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .qmbox .flex_between {
+                justify-content: space-between;
+            }
+
+            .qmbox .flex_start {
+                justify-content: flex-start;
+            }
+
+            .qmbox .flex_end {
+                justify-content: flex-end;
+            }
+
+            .qmbox .align_flex_start {
+                align-items: flex-start;
+            }
+
+            .qmbox .flex_align_center {
+                align-items: center;
+            }
+
+            .qmbox .space_between {
+                justify-content: space-between;
+            }
+
+            .qmbox .row1 {
+                grid-template-rows: 100%;
+            }
+
+            .qmbox a {
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+            .qmbox .mya:hover {
+                text-decoration: none;
+            }
+
+            /* input */
+            .qmbox .search_in_input {
+                position: absolute;
+                right: 5%;
+            }
+
+            .qmbox .huge_card {
+                width: 45%;
+                max-width: 45%;
+                border-radius: 1.5rem;
+                height: 100%;
+                max-height: 100%;
+            }
+
+            .qmbox .hyper_card {
+                width: 100%;
+                max-width: 100%;
+                border-radius: 3rem;
+                margin: 0 auto;
+                height: 100%;
+                max-height: 100%;
+            }
+
+            .qmbox .common_button {
+                font-size: 0.9rem;
+                line-height: 2rem;
+                border: none;
+                outline: none;
+                background: transparent;
+                border: 1px solid #ccc;
+                border-radius: 0.28rem;
+            }
+
+            .qmbox .bg_warning {
+                background-color: #E6A23C;
+            }
+
+            .qmbox .bg_fc {
+                background: #f9f9f9;
+            }
+
+            .qmbox .bg_42c {
+                background: #1a2bc4;
+            }
+
+            .qmbox .bg_important {
+                background: #1a2bc4;
+            }
+
+            .qmbox .bg_ff {
+                background: #fff;
+            }
+
+            .qmbox .bg_c3 {
+                background: #333;
+            }
+
+            .qmbox .bg_green {
+                background: #009237;
+            }
+
+            .qmbox .bg_lightgreen {
+                background: #00923720;
+            }
+
+            .qmbox .bg_inh {
+                background: inherit;
+            }
+
+            .qmbox .bg_pink {
+                background: #c8adada0;
+            }
+
+            .qmbox .bg_table_yellow {
+                background: #ffa60020;
+            }
+
+            .qmbox .bg_table_green {
+                background: #00923720;
+            }
+
+            .qmbox .bg_table_red {
+                background: #ff000020;
+            }
+
+            .qmbox .bg_table_white {
+                background: inherit;
+            }
+
+            .qmbox .bg_pul {
+                background: #b4adada0;
+            }
+
+            .qmbox .bg_qin {
+                background: #a0adada0;
+            }
+
+            .qmbox .common_btn {
+                font-size: 0.9rem;
+                line-height: 2rem;
+                border: none;
+                outline: none;
+                background: transparent;
+                border: 1px solid #ccc;
+                border-radius: 0.28rem;
+            }
+
+            .qmbox .example_btn {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                height: 35px;
+            }
+
+            .qmbox .tab_btn {
+                border: none;
+                width: 100%;
+                transition: width 0.3s;
+                cursor: pointer;
+                border-top-right-radius: 3rem;
+                border-bottom-right-radius: 3rem;
+            }
+
+            .qmbox .hover_green:hover {
+                background-color: #00923720;
+                color: #009237;
+                cursor: pointer;
+            }
+
+            .qmbox .hover_important:hover {
+                color: #409eff;
+                background-color: #409eff30;
+                border-color: #409eff30;
+            }
+
+            .qmbox .hover_42c:hover {
+                color: #fff;
+                background: #409eff;
+            }
+
+            .qmbox .hover_fc:hover {
+                color: #151515;
+                background: #fafafa;
+            }
+
+            .qmbox .hover_c3:hover {
+                color: #fff;
+                background: #000;
+            }
+
+            .qmbox .hover_ff:hover {
+                color: #1a2bc4;
+                background: #fff;
+            }
+
+            .qmbox .hover_border:hover {
+                border: 1px solid;
+            }
+
+            .qmbox .hover_not_allowed:hover {
+                cursor: not-allowed;
+            }
+
+            .qmbox .bg_lightgreen:hover {
+                background-color: #00923705;
+                color: #009237;
+                cursor: pointer;
+            }
+
+            .qmbox .hover_blue:hover {
+                background-color: #d8e7f8;
+                color: #162080;
+                cursor: pointer;
+            }
+
+            .qmbox .hover_point:hover {
+                cursor: pointer;
+            }
+
+            .qmbox .hover_help:hover {
+                cursor: help;
+            }
+
+            .qmbox .input_box {
+                background-color: inherit;
+                margin: 0;
+                min-width: 180px;
+                height: 35px;
+                border: #aaa 1px solid;
+                padding: 0.5vh 1vw;
+                font-weight: 500;
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+            }
+
+            .qmbox .form_container {
+                z-index: 1;
+                width: 65rem;
+                min-width: 60rem;
+                min-height: 20rem;
+            }
+
+            .qmbox .form_content {
+                padding: 2rem;
+                background: #fff;
+                box-shadow: 0px 1.5rem 5.5rem 0px rgb(0 0 0 / 20%);
+            }
+
+            .qmbox .form_favicon img {
+                width: 6rem;
+            }
+
+            .qmbox p {
+                margin: 0.5rem 0 0.1rem 0;
+            }
+
+            .qmbox .form_side_div {
+                position: relative;
+                width: 50%;
+                padding-right: 0.5rem;
+            }
+
+            .qmbox .form_side_div img {
+                width: 100%;
+                height: 520px;
+            }
+
+            .qmbox .form_side_word {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 35rem;
+                color: #e2e2e2;
+                letter-spacing: 0.071rem;
+            }
+
+            .qmbox .page_background {
+                background: #f9f9f9;
+                width: 100vw;
+                min-width: 1280px;
+                height: 100vh;
+                min-height: 700px;
+                overflow: hidden;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .qmbox .page_dec_left_bottom {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                opacity: 0.5;
+            }
+
+            .qmbox .page_dec_right_bottom {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                opacity: 0.5;
+            }
+
+            .qmbox .page_dec_left_bottom img {
+                width: 28.5rem;
+            }
+
+            .qmbox .page_dec_right_bottom img {
+                width: 28.5rem;
+            }
+
+            .qmbox .form_raw {
+                width: 35.7rem;
+                margin: 2rem auto 1rem auto;
+            }
+
+            .qmbox .signin_reg_input input {
+                width: 100%;
+                line-height: 2rem;
+                padding: 0 1rem;
+                border: 1px solid #ccc;
+                border-radius: 0.28rem;
+                font-size: 0.9rem;
+                outline: none;
+            }
+
+            .qmbox .signin_reg_input input:focus-visible {
+                border-color: blue;
+            }
+
+            .qmbox .signin_reg_input input::-webkit-input-placeholder {
+                color: #bbb;
+            }
+
+            .qmbox .border_red input {
+                border-color: red !important;
+            }
+
+            .qmbox .border_ce {
+                border: 1px solid #eee;
+            }
+
+            .qmbox .task_shadow {
+                box-shadow: 2px 4px 8px 0px rgb(0 0 0 / 3%);
+            }
+
+        </style>
+        <div class="page_background">
+            <div class="form_container form_content" style="width: 35rem; min-width: 35rem;">
+                <div class="flex_def flex_start" style="margin-bottom: 0.5rem">
+                    <div class="form_favicon">
+                        <img style="width: 2.5rem"
+                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAABdCAYAAADHcWrDAAAAAXNSR0IArs4c6QAABU1JREFUeF7t3G1MU1cYB/B/kbeMt07jDBsI6FhAhC9EEcggQTFj2QcG6gjDoZkxJA4TY3gxUbbAh8GyCEGZn4w2MtmCLDqWbNGRUDFMBl8GRJkhsoJz0xmxgGxUapdTUuLoRSu25+nufU7CB5LT+/T++HM459xDdZkGg81oMoGb5wUyo6JgLC7W6VBdbbN/w/AeVZ83rqqaQxfVbEeOeLSo1i+uq6mZI2B0eVFgdHnW85UYndEJBAhKctIZnUCAoCQnndEJBAhKctIZnUCAoCQnndEJBAhKctIZnUCAoCQnndEJBAhKctIZnUCAoCQnndEJBAhKctIZnUCAoCQnXYvoH7a3o+369SXd+kt+fogIDUVUWNjcl16P1aGhyIiKwsuBgUu6powXkSc9w2BA1+io2+/1ndhYlG7ciOw1a6Bz+9Vf7IKqRXewhAUEoCQ5GVUZGRC/Gd7QVI/uQF4dFoaOoiK8vnw5ubtm0IW0r48Pvs7PR15cHCm816IXrl//1FQ+tFgwNjEBk9mM3ycn8efUFGYfP3YJ8+CmTfg8O9ulvp7o5LXov+zdi6RVq1y+Z6vNhu9u3MDx3l78ODLyzNedyc1FUWLiM/t5ooNq0J/E+Wt6Gp8Yjfiir29RMzHUjJSW2qecspsq0R2ILYOD+ODChUWHneTwcPTu2SN9SqlqdIE/cPcu0k6dwpTFohjo2s2bUZGWJjXsqkcXmmKMz25uVoQN9veHubwcPjp5SyhNoAvtovPn8eXAgCJ8x86dyIqOlpZ2zaBPWiyIbGiAeWbGCff9xEQ05+Yy+vNOGV0R+9hoRPXly05dA319MVlRYV88yWiaSbrAHLp3D/EnTii6thcUQGySyWiaQhegr9bX44+pKSdbmatUzaEfvHQJR69edUJ/LyEBX+XlyQg6NIfeeu0adrS1OeGmR0biyq5djP48ey+ual0ZG8Obp087dY/R63GztNTVy7xQP80lffj+fcQ2NTmhiUWSmMHIaJpDF9sBIXV1irbWw4elrEw1hy605296Af14WRn0Eh5oaw59+tEjBNXWctKVTgN4YkUqpH978AAxx44prkr/PnRIxpCuvSnjT7du2bd6Fzbx4Nq0fz+je2LK+M3QEPJbW51wUyMi0L17N6N7Ar2qsxM1XV1OuDvWrbOfFJDRNPeHVMzRxVx9YTuQkoKjW7fKMNfWmC6Oa0Q3NirCtm3fLu08jKaSXtfdjcqODid0sY/+sLIS/suWcdLdOabPWK2IaWxU3NbNj4/HuW3bpID/Z3FG9Wl1i53adfc8/cDFi2jo6VGElfkAQzPoP9++jZSTJxXBxdAiFkWyHtVpAl2cdxTgSk+LBEBZaio+27JF2tCievROkwk5Z8/in9lZRVSxh/7rvn3wk/RA2vEmVDl7sVitqO/pUZypPKk/WFKChJUrpaZcdUnvv3MHx/v6cKa/f9F0O4Q/zcpCZXq6dHCvRi9PS3tqCsUW7ajZjNGJCfvO4c3x8UXH7YWy4qjFtwUF0g+Oev3w4qkIUiZcc+jiFNcPhYUQn11O3bz2D6k7Yd6Ni0NTTg7Cg4PdedklX0u16G+sWIGPNmxAcVISQgMClgzkiReSo7/d0oLvh4eXfG+vBAXhtZAQRDr+c1qvx1tr15JMBV29CXJ0V9+omvoxOsFPk9EZnUCAoCQnndEJBAhKctIZnUCAoCQnndEJBAhKctIZnUCAoCQnndEJBAhKctIZnUCAoCQnndEJBAhKctIZnUCAoCQn3RvQxWEco8lE8Fa0U3LeWPwnRqbBYGNwOT98O3xxscQPJpRzX/+LKv8CHAgxmifGX6UAAAAASUVORK5CYII=">
+                    </div>
+                </div>
+                <p style="font-size: 1.675rem; font-weight: 600; line-height: 4rem; margin-bottom: 2rem">Activate</p>
+                <p class="text09rem weight500 text_c5" style="margin-bottom: 2rem;">
+                    please click the link below to activate your account. (The link is valid for 48 hours, after 48 hours it needs to be resubmitted)
+                </p>
+                <a style="padding: 0.5rem 1rem; " class="common_button text_cf bg_42c hover_point hover_42c"
+                   href="{{ url }}"
+                   rel="noopener" target="_blank">Activate email
+                </a>
+                <p style="margin: 2rem 0; font-size: 0.9rem; color: #333; word-break: break-word;">
+                    If the link above is not clickable, please visit <a
+                        href="{{ url }}"
+                        rel="noopener" target="_blank">{{ url }}</a>
+                    manually for activation.
+                </p>
+            </div>
+        </div>
+
+
+        <style type="text/css">.qmbox style, .qmbox script, .qmbox head, .qmbox link, .qmbox meta {
+            display: none !important;
+        }</style>
+    </div>
+</div>
