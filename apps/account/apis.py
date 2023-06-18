@@ -18,12 +18,16 @@ from user.models import User
 from user.services import UserService
 from .serializers import SMSInputSerializer, RegisterInputSerializer, TokenObtainPairSerializer, TokenRefreshSerializer
 from .tasks import send_sms_code
+from django_ratelimit.decorators import ratelimit
+from django.utils.decorators import method_decorator
 
 
 class AccountViewSet(viewsets.ViewSet):
     permission_classes = (permissions.AllowAny,)
 
     @action(methods=["POST"], detail=False, url_path="v1/sms_code")
+    @method_decorator(ratelimit(key="post:mobile", rate="5/m"))
+    @method_decorator(ratelimit(key="ip", rate="5/m"))
     def sms_code(self, request):
         serializer = SMSInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -38,6 +42,7 @@ class AccountViewSet(viewsets.ViewSet):
         return Response()
 
     @action(methods=["POST"], detail=False, url_path="v1/register")
+    @method_decorator(ratelimit(key="ip", rate="3/s"))
     def register(self, request):
         serializer = RegisterInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -65,18 +70,21 @@ class AccountViewSet(viewsets.ViewSet):
         return Response(status=status.HTTP_201_CREATED)
 
     @action(methods=["POST"], detail=False, url_path="v1/login")
+    @method_decorator(ratelimit(key="ip", rate="3/s"))
     def login(self, request):
         serializer = TokenObtainPairSerializer(data=request.data, context={"request": request})
         serializer.is_valid(raise_exception=True)
         return Response(serializer.validated_data)
 
     @action(methods=["POST"], detail=False, url_path="v1/refresh_token")
+    @method_decorator(ratelimit(key="ip", rate="3/h"))
     def refresh_token(self, request):
         serializer = TokenRefreshSerializer(data=request.data, context={"request": request})
         serializer.is_valid(raise_exception=True)
         return Response(serializer.validated_data)
 
     @action(methods=["POST"], detail=False, url_path="v1/logout", authentication_classes=(JWTAuthentication,))
+    @method_decorator(ratelimit(key="ip", rate="3/s"))
     def logout(self, request):
         ua_md5 = HeaderUtil.get_ua_md5(request)
         access_key = CacheConstants.USER_ACCESS_TOKEN.format(ua_md5=ua_md5, user_id=request.user.id)

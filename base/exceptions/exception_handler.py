@@ -10,6 +10,7 @@ from rest_framework.serializers import as_serializer_error
 from rest_framework.views import exception_handler as exception_handler_
 
 from .exception import ApplicationError
+from django_ratelimit.exceptions import Ratelimited
 
 
 def exception_handler(exc, ctx):
@@ -26,7 +27,7 @@ def exception_handler(exc, ctx):
     if isinstance(exc, Http404):
         exc = exceptions.NotFound()
 
-    if isinstance(exc, PermissionDenied):
+    if isinstance(exc, PermissionDenied) and not isinstance(exc, Ratelimited):
         exc = exceptions.PermissionDenied()
 
     response = exception_handler_(exc, ctx)
@@ -42,12 +43,15 @@ def exception_handler(exc, ctx):
         data = {"message": _("服务器开了小差, 请稍后再试"), "extra": {}}
         return Response(data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    if isinstance(exc.detail, (list, dict)):
+    if hasattr(exc, "detail") and isinstance(exc.detail, (list, dict)):
         response.data = {"detail": response.data}
 
     if isinstance(exc, exceptions.ValidationError):
         response.data["message"] = _("Validation error")
         response.data["extra"] = {"fields": response.data["detail"]}  # noqa
+    elif isinstance(exc, Ratelimited):
+        response.data["message"] = _("Too many requests, try again later.")
+        response.status_code = status.HTTP_429_TOO_MANY_REQUESTS
     else:
         if isinstance(response.data["detail"], dict) and "detail" in response.data["detail"]:
             response.data["message"] = response.data["detail"]["detail"]

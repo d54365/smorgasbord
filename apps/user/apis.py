@@ -11,17 +11,21 @@ from .serializers import (
     ActivateMailInputSerializer,
 )
 from .tasks import send_email_active
+from django_ratelimit.decorators import ratelimit
+from django.utils.decorators import method_decorator
 
 
 class UserViewSet(viewsets.ViewSet):
     authentication_classes = (JWTAuthentication,)
 
     @action(methods=["GET"], detail=False, url_path="v1/center")
+    @method_decorator(ratelimit(key="ip", rate="3/s"))
     def center(self, request):
         serializer = UserCenterOutputSerializer(instance=request.user)
         return Response(serializer.data)
 
     @action(methods=["PUT"], detail=False, url_path="v1/mail/(?P<mail>.*)")
+    @method_decorator(ratelimit(key="ip", rate="3/s"))
     def send_activate_mail(self, request, mail):
         serializer = SendMailInputSerializer(data={"mail": mail}, instance=request.user)
         serializer.is_valid(raise_exception=True)
@@ -34,6 +38,7 @@ class UserViewSet(viewsets.ViewSet):
         return Response()
 
     @action(methods=["GET"], detail=False, url_path="v1/activate/(?P<token>.*)", authentication_classes=[])
+    @method_decorator(ratelimit(key="ip", rate="3/s"))
     def activate_mail(self, request, token):
         serializer = ActivateMailInputSerializer(data={"token": token})
         serializer.is_valid(raise_exception=True)
