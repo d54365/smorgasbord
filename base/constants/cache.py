@@ -1,6 +1,7 @@
 class CacheConstants:
     ID_GEN = "id_gen:worker"
     CACHE_DISK_STR = "disk"
+    CACHE_LOCK_STR = "lock"
     USER_AGENT = "ua:{ua}"
 
     SMS_CODE = "account:sms_code:{mobile}"
@@ -16,3 +17,6 @@ class CacheConstants:
 
     USER_CACHE = "user:cache:{user_id}"
     USER_CACHE_EXPIRED = 60 * 60 * 24
+
+    INVENTORY_DEDUCT = "inventory:deduct:{id}"
+    INVENTORY_DEDUCT_EXPIRED = 10

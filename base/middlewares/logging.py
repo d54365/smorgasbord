@@ -51,7 +51,7 @@ class LoggingMiddleware:
             "query_params": query_params,
             "body": cached_request_body,
             "status_code": response.status_code,
-            "response": "(data_stream)" if response.streaming else self._chunked_to_max(response.content),
+            "response": response.content.decode() if response.status_code in range(400, 500) else None,
             "response_headers": response.headers,
             "start_time": start_time,
             "end_time": end_time,

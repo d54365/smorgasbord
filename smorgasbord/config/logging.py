@@ -12,18 +12,10 @@ def log_filter(data):
 
 
 logger.add(
-    f"{PROJECT_DIR}/logs/exception.log",
-    level="ERROR",
-    enqueue=True,
-    backtrace=True,
-    diagnose=True,
+    f"{PROJECT_DIR}/logs/exception.log", level="ERROR", enqueue=True, backtrace=True, diagnose=True, encoding="utf8"
 )
 logger.add(
-    f"{PROJECT_DIR}/logs/info.log",
-    level="INFO",
-    filter=log_filter,
-    enqueue=True,
-    serialize=True,
+    f"{PROJECT_DIR}/logs/info.log", level="INFO", filter=log_filter, enqueue=True, serialize=True, encoding="utf8"
 )
 logger.add(
     f"{PROJECT_DIR}/logs/request.log",
@@ -31,6 +23,7 @@ logger.add(
     filter=lambda x: "[REQUEST]" in x["message"],
     enqueue=True,
     serialize=True,
+    encoding="utf8",
 )
 logger.add(
     f"{PROJECT_DIR}/logs/sms.log",
@@ -38,6 +31,7 @@ logger.add(
     filter=lambda x: "[SMS]" in x["message"],
     enqueue=True,
     serialize=True,
+    encoding="utf8",
 )
 logger.add(
     f"{PROJECT_DIR}/logs/email.log",
@@ -45,4 +39,5 @@ logger.add(
     filter=lambda x: "[EMAIL]" in x["message"],
     enqueue=True,
     serialize=True,
+    encoding="utf8",
 )

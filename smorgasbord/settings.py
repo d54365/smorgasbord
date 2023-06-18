@@ -44,7 +44,10 @@ THIRD_APPS = (
     "django_filters",
 )
 
-LOCAL_APPS = ("user",)
+LOCAL_APPS = (
+    "user",
+    "inventory",
+)
 
 INSTALLED_APPS = [
     "django.contrib.auth",

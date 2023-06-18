@@ -18,4 +18,8 @@ CACHES = {
         # ^-- Timeout for each DjangoCache database transaction.
         "OPTIONS": {"size_limit": 2**30},  # 1 gigabyte
     },
+    CacheConstants.CACHE_LOCK_STR: {
+        "BACKEND": "base.cache.RedisCacheClient",
+        "LOCATION": env.str("LOCK_REDIS_URL"),
+    },
 }
