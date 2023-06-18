@@ -76,10 +76,11 @@ class TokenObtainPairSerializer(TokenObtainPairSerializer_):
             raise ApplicationError(message=_("用户处于禁用状态"))
 
         refresh = self.get_token(user)
-
         data = {
             "refresh": str(refresh),
             "access": str(refresh.access_token),
+            "access_expired": int(api_settings.ACCESS_TOKEN_LIFETIME.total_seconds()),
+            "refresh_expired": int(api_settings.REFRESH_TOKEN_LIFETIME.total_seconds()),
             "user_id": user.id,
             "username": user.username,
             "mobile": user.mobile,
