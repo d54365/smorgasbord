@@ -82,10 +82,10 @@ class TokenObtainPairSerializer(TokenObtainPairSerializer_):
             "access_expired": int(api_settings.ACCESS_TOKEN_LIFETIME.total_seconds()),
             "refresh_expired": int(api_settings.REFRESH_TOKEN_LIFETIME.total_seconds()),
             "user_id": user.id,
-            "username": user.username,
-            "mobile": user.mobile,
-            "mail": user.mail,
-            "identity": user.identity,
+            "username": user.username,  # noqa
+            "mobile": user.mobile,  # noqa
+            "mail": user.mail,  # noqa
+            "identity": user.identity,  # noqa
             "type": api_settings.AUTH_HEADER_TYPES,
         }
 
